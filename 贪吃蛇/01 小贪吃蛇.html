@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .map {
+            width: 800px;
+            height: 600px;
+            background-color: #ccc;
+            /* 因为地图上有蛇和食物会移动和随机位置产生会脱离文档流 子绝父相 */
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 画出地图 -->
+    <div class="map" id="map"></div>
+    <script src="Food.js"></script>
+    <script src="Snake.js"></script>
+    <script src="Game.js"></script>
+    <script>
+        // 实例化Game对象
+        var gm = new Game(document.querySelector(".map"));
+
+        // 初始化游戏 ----开始游戏
+        gm.init();
+        console.dir(gm);
+    </script>
+
+</body>
+
+</html>
